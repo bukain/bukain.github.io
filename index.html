@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Title</title>
+    <title>Bukain</title>
     <meta charset="utf-8">
     <style>
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -46,8 +46,10 @@ class: center, middle
         let path = `https://raw.githubusercontent.com/${location.pathname.replace('/blob/', '/')}`
         let dapatkan = await fetch(path)
         dapatkan = await dapatkan.text()
-        console.log(dapatkan)
-        var slideshow = remark.create();
+        if (dapatkan){
+          document.querySelector('#source').value = dapatkan
+          var slideshow = remark.create();
+        }
       }
       init()
     </script>
