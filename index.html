@@ -42,7 +42,14 @@ class: center, middle
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>
     <script>
-      var slideshow = remark.create();
+      async function init(){
+        let path = `https://github.com${location.pathname.replace('/blob/', '/raw/')}`
+        let dapatkan = await fetch(path)
+        dapatkan = await dapatkan.text()
+        console.log(dapatkan)
+        var slideshow = remark.create();
+      }
+      init()
     </script>
   </body>
 </html>
