@@ -43,7 +43,7 @@ class: center, middle
     </script>
     <script>
       async function init(){
-        let path = `https://github.com${location.pathname.replace('/blob/', '/raw/')}`
+        let path = `https://raw.githubusercontent.com/${location.pathname.replace('/blob/', '/')}`
         let dapatkan = await fetch(path)
         dapatkan = await dapatkan.text()
         console.log(dapatkan)
